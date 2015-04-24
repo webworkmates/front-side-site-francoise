@@ -4,10 +4,16 @@
 'use strict';
 
 angular.module('siteFrancoiseApp')
-  .controller('menuCtrl', ['$scope', '$rootScope','$state','menu.menuService','weatherService','$interval', function ($scope, $rootScope,$state,menuService,weatherService,$interval) {
-    menuService.initializeMenu().then(function(menu){
-      $scope.menuItems = menu;
-    });
+  .controller('menuCtrl', ['$scope', '$rootScope', '$state', 'menu.menuService', 'weatherService', '$interval', 'menuFactory', function ($scope, $rootScope, $state, menuService, weatherService, $interval, menuFactory) {
+    //menu.query().$promise.then(function(data){
+    //  console.log(data);
+    //});
+
+    menuFactory.getmenuItems().then(function (data) {
+      $scope.menuItems = data;
+    })
+
+
     $scope.hour=menuService.setHorloge();
     $scope.date=menuService.formatDate(new Date());
     $interval(function(){

@@ -20,6 +20,7 @@ angular
     'ngStorage',
     'weather',
     'menu',
+    'menuFactory',
     'pascalprecht.translate'
   ]).run(['$rootScope','$state',function() {
 

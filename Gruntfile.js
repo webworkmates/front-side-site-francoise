@@ -64,7 +64,7 @@ module.exports = function (grunt) {
     },
     protractor: {
       options: {
-        configFile: "test/protractor.conf.js",
+        configFile: 'test/protractor.conf.js',
         keepAlive: false,
         noColor: false
       },
@@ -75,7 +75,7 @@ module.exports = function (grunt) {
               browserName: 'chrome',
               version: '',
               platform: 'ANY',
-              "chromeOptions": {
+              'chromeOptions': {
                 binary: '/usr/bin/google-chrome',
                 args: [],
                 extensions: []
@@ -91,7 +91,7 @@ module.exports = function (grunt) {
               browserName: 'chrome',
               version: '',
               platform: 'ANY',
-              "chromeOptions": {
+              'chromeOptions': {
                 args: [],
                 extensions: []
               }
@@ -101,7 +101,7 @@ module.exports = function (grunt) {
         }
       }
     },
-    protractor_webdriver: {
+    protractorWebdriver: {
       start: {
         options: {
           //path: '/usr/bin/',
@@ -463,7 +463,7 @@ module.exports = function (grunt) {
     'concurrent:test',
     'autoprefixer',
     'connect:test',
-    'protractor_webdriver',
+    'protractorWebdriver',
     'protractor:local'
   ]);
 

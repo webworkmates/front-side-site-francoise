@@ -17,7 +17,8 @@
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
           <ul class="nav navbar-nav">
             <li class="menuItem" ng-repeat="menuItem in menuItems" ng-class="{'active':setActive(menuItem.active)}"><a
-              ui-sref="{{menuItem.urlName}}"><i class="{{menuItem.class}}"></i> {{menuItem.name|lowercase}}</a></li>
+              ui-sref="{{menuItem.urlName}}"><i class="{{menuItem.class}}"></i> {{menuItem.menuItemName|lowercase}}</a>
+            </li>
           </ul>
           <div class="weather">{{date}} --- {{hour}} --- {{temp}}° {{weather}}<i class="icon" ng-class="icon"></i>{{message}}
           </div>
