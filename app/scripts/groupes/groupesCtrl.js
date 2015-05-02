@@ -4,7 +4,7 @@
 'use strict';
 
 angular.module('siteFrancoiseApp')
-  .controller('agendaCtrl',['$scope', function ($scope) {
+  .controller('groupesCtrl',['$scope', function ($scope) {
     $scope.nothing='';
 
   }]);

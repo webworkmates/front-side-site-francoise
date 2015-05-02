@@ -4,7 +4,7 @@
 'use strict';
 
 angular.module('siteFrancoiseApp')
-  .controller('photothequeCtrl',['$scope', function ($scope) {
+  .controller('mediasCtrl',['$scope', function ($scope) {
     $scope.message='ICI C\'EST LA PHOTOTHEQUE';
 
   }]);

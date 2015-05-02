@@ -4,13 +4,15 @@
 'use strict';
 
 angular.module('siteFrancoiseApp')
-  .controller('menuCtrl', ['$scope', '$rootScope', '$state', 'menu.menuService', 'weatherService', '$interval', 'menuFactory', function ($scope, $rootScope, $state, menuService, weatherService, $interval, menuFactory) {
-    //menu.query().$promise.then(function(data){
-    //  console.log(data);
-    //});
+  .controller('menuCtrl', ['$scope', '$rootScope', '$state', 'menu.menuService', 'weatherService', '$interval', 'menuFactory','helper', function ($scope, $rootScope, $state, menuService, weatherService, $interval, menuFactory,helper) {
 
     menuFactory.getmenuItems().then(function (data) {
       $scope.menuItems = data;
+      //var string='';
+      //_.each(data, function(data){
+      //  string+=helper.setUrlName(data.menuItemName,data.active,data.active);
+      //});
+      //console.log(string)
     })
 
 

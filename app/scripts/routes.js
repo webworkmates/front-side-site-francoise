@@ -1,20 +1,12 @@
 /**
  * Created by yanning on 11/04/2015.
  */
+
 'use strict';
 angular
-  .module('siteFrancoiseApp', [
-    'ngAnimate',
-    'ngCookies',
-    'ngResource',
-    'ngRoute',
-    'ngSanitize',
-    'ngTouch',
-    'ui.router'
-  ]).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
-
+  .module('siteFrancoiseApp', ['ui.router']).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
+    var routes =
     $urlRouterProvider.otherwise('error');
-
     $stateProvider
       .state('accueil', {
         url: '/home',
@@ -44,68 +36,68 @@ angular
         }
 
       })
-      .state('videotheque', {
-        url: '/videotheque',
+      .state('teambuilding', {
+        url: '/teambuilding',
         views: {
           'menu@': {
             templateUrl: 'views/menu/menu.html',
             controller: 'menuCtrl'
           },
           'content@': {
-            templateUrl: 'views/videotheque/videotheque.html',
-            controller: 'videothequeCtrl'
+            templateUrl: 'views/teambuilding/teambuilding.html',
+            controller: 'teambuildingCtrl'
           }
 
         }
 
       })
-      .state('audiotheque', {
-        url: '/audiotheque',
+      .state('evenementiel', {
+        url: '/evenementiel',
         views: {
           'menu@': {
             templateUrl: 'views/menu/menu.html',
             controller: 'menuCtrl'
           },
           'content@': {
-            templateUrl: 'views/audiotheque/audiotheque.html',
-            controller: 'audiothequeCtrl'
+            templateUrl: 'views/evenementiel/evenementiel.html',
+            controller: 'evenementielCtrl'
           }
 
         }
 
       })
-      .state('phototheque', {
-        url: '/phototheque',
+      .state('medias', {
+        url: '/medias',
         views: {
           'menu@': {
             templateUrl: 'views/menu/menu.html',
             controller: 'menuCtrl'
           },
           'content@': {
-            templateUrl: 'views/phototheque/phototheque.html',
-            controller: 'photothequeCtrl'
+            templateUrl: 'views/medias/medias.html',
+            controller: 'mediasCtrl'
           }
 
         }
 
       })
-      .state('agenda', {
-        url: '/agenda',
+      .state('groupes', {
+        url: '/groupes',
         views: {
           'menu@': {
             templateUrl: 'views/menu/menu.html',
             controller: 'menuCtrl'
           },
           'content@': {
-            templateUrl: 'views/agenda/agenda.html',
-            controller: 'agendaCtrl'
+            templateUrl: 'views/groupes/groupes.html',
+            controller: 'groupesCtrl'
           }
 
         }
 
       })
-      .state('contact', {
-        url: '/contact',
+      .state('contacts', {
+        url: '/contacts',
         views: {
           'menu@': {
             templateUrl: 'views/menu/menu.html',
@@ -117,6 +109,21 @@ angular
           }
 
         }
+      })
+      .state('pedagogie', {
+        url: '/pedagogie',
+        views: {
+          'menu@': {
+            templateUrl: 'views/menu/menu.html',
+            controller: 'menuCtrl'
+          },
+          'content@': {
+            templateUrl: 'views/pedagogie/pedagogie.html',
+            controller: 'pedagogieCtrl'
+          }
+
+        }
+
       })
       .state('error', {
           url: '/error',
@@ -133,3 +140,4 @@ angular
         });
 
   }]);
+

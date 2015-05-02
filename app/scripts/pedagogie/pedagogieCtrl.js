@@ -4,6 +4,6 @@
 'use strict';
 
 angular.module('siteFrancoiseApp')
-  .controller('videothequeCtrl',['$scope', function ($scope) {
+  .controller('pedagogieCtrl',['$scope', function ($scope) {
     $scope.nothing='';
   }]);
