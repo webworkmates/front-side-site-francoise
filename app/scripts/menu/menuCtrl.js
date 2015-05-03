@@ -49,6 +49,64 @@ angular.module('siteFrancoiseApp')
           return true;
         }
     };
+
+    $scope.hover_partner=function(){
+      $scope.partner_hover=true;
+      $scope.event_hover=false;
+      $scope.pedagogie_hover=false;
+      $scope.medias_hover=false;
+      $scope.contacts_hover=false;
+    }
+
+    $scope.hover_event=function(){
+      $scope.event_hover=true;
+      $scope.partner_hover=false;
+      $scope.pedagogie_hover=false;
+      $scope.medias_hover=false;
+      $scope.contacts_hover=false;
+    }
+
+    $scope.hover_medias=function(){
+      $scope.medias_hover=true;
+      $scope.partner_hover=false;
+      $scope.event_hover=false;
+      $scope.pedagogie_hover=false;
+      $scope.contacts_hover=false;
+    }
+
+    $scope.hover_contacts=function(){
+      $scope.contacts_hover=true;
+      $scope.partner_hover=false;
+      $scope.event_hover=false;
+      $scope.pedagogie_hover=false;
+      $scope.medias_hover=false;
+    }
+
+    $scope.hover_pedagogie=function(){
+      $scope.pedagogie_hover=true;
+      $scope.partner_hover=false;
+      $scope.event_hover=false;
+      $scope.medias_hover=false;
+      $scope.contacts_hover=false;
+    }
+
+    $scope.hover_accueil=function(){
+      $scope.pedagogie_hover=false;
+      $scope.partner_hover=false;
+      $scope.event_hover=false;
+      $scope.medias_hover=false;
+      $scope.contacts_hover=false;
+    }
+
+    $scope.hover_team=function(){
+      $scope.pedagogie_hover=false;
+      $scope.partner_hover=false;
+      $scope.event_hover=false;
+      $scope.medias_hover=false;
+      $scope.contacts_hover=false;
+    }
+
+
     function ss(){
       if($state.$current.name==='error'){
         $scope.errorPage=true;

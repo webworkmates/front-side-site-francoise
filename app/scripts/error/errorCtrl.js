@@ -5,6 +5,7 @@
 angular.module('siteFrancoiseApp')
   .controller('errorCtrl',['$scope', function ($scope) {
     $scope.errorMessage='Page not found.If you think you have arrived here by our mistake,please contact us.';
+    $scope.prehome=false;
 
   }]);
 

@@ -6,7 +6,7 @@
 angular
   .module('siteFrancoiseApp', ['ui.router']).config(['$stateProvider', '$urlRouterProvider', function ($stateProvider, $urlRouterProvider) {
     var routes =
-    $urlRouterProvider.otherwise('error');
+    $urlRouterProvider.otherwise('prehome');
     $stateProvider
       .state('accueil', {
         url: '/home',
@@ -125,16 +125,12 @@ angular
         }
 
       })
-      .state('error', {
-          url: '/error',
+      .state('prehome', {
+          url: '/prehome',
           views: {
-            'menu@': {
-              templateUrl: 'views/menu/menu.html',
-              controller: 'menuCtrl'
-            },
             'content@': {
-              templateUrl: 'views/error/error.html',
-              controller: 'errorCtrl'
+              templateUrl: 'views/prehome/prehome.html',
+              controller: 'prehomeCtrl'
             }
           }
         });

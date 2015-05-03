@@ -6,5 +6,6 @@
 angular.module('siteFrancoiseApp')
   .controller('evenementielCtrl',['$scope', function ($scope) {
     $scope.nothing='';
+    $scope.prehome=false;
 
   }]);

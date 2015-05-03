@@ -1,41 +1,311 @@
-<div class="container">
-  <div class="row">
-    <nav class="navbar navbar-inverse navbar-fixed-top">
-      <div class="col-md-10 col-md-offset-1 container-fluid">
-        <!-- Brand and toggle get grouped for better mobile display -->
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
-                  data-target="#bs-example-navbar-collapse-1">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
+<!--<div class="container">-->
+<!--<div class="row">-->
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+<!--<div class="col-md-10 col-md-offset-1 container-fluid">-->
+<!--&lt;!&ndash; Brand and toggle get grouped for better mobile display &ndash;&gt;-->
+<!--<div class="navbar-header">-->
+<!--<button type="button" class="navbar-toggle collapsed" data-toggle="collapse"-->
+<!--data-target="#bs-example-navbar-collapse-1">-->
+<!--<span class="sr-only">Toggle navigation</span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--<span class="icon-bar"></span>-->
+<!--</button>-->
+<!--</div>-->
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-          <ul class="nav navbar-nav">
-            <li class="menuItem" ng-repeat="menuItem in menuItems" ng-class="{'active':setActive(menuItem.active)}"><a
-              ui-sref="{{menuItem.urlName}}"><i class="{{menuItem.class}}"></i> {{menuItem.menuItemName|lowercase}}</a>
+<!--&lt;!&ndash; Collect the nav links, forms, and other content for toggling &ndash;&gt;-->
+<!--<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">-->
+<!--<ul class="nav navbar-nav">-->
+<!--<li class="menuItem" ng-repeat="menuItem in menuItems" ng-class="{'active':setActive(menuItem.active)}"><a-->
+<!--ui-sref="{{menuItem.urlName}}"><i class="{{menuItem.class}}"></i> {{menuItem.menuItemName|lowercase}}</a>-->
+<!--</li>-->
+<!--</ul>-->
+<!--<div class="weather">{{hour}} --- {{temp}}° {{weather}}<i class="icon" ng-class="icon"></i>{{message}}-->
+<!--&lt;!&ndash;<div class="weather">{{date}} --- {{hour}} --- {{temp}}° {{weather}}<i class="icon" ng-class="icon"></i>{{message}}&ndash;&gt;-->
+<!--</div>-->
+<!--</div>-->
+<!--&lt;!&ndash; /.navbar-collapse &ndash;&gt;-->
+<!--</div>-->
+<!--&lt;!&ndash; /.container-fluid &ndash;&gt;-->
+
+<!--<div ng-show="errorPage" class="col-md-12 errorDiv" >-->
+<!--<div class="row">-->
+<!--<div class="col-md-6 errorDivLeft" >DESOLE<br>ERREUR 404</div>-->
+<!--<div class="col-md-6 errorDivRight"><img src="images/chien404.gif"></div>-->
+<!--</div>-->
+<!--</div>-->
+
+<!--</nav>-->
+
+<!--</div>-->
+<!--</div>-->
+
+<!--<div class="col-md-12">-->
+<!--<div class="row">-->
+<!--<div class="col-md-12">-->
+<!--<nav class="navbar navbar-inverse navbar-fixed-top">-->
+<!--<div class="col-md-10 col-md-offset-1" style="border:1px solid black"></div>-->
+<!--</nav>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-10 col-md-offset-1 " style="background-color: #222222;height:55px"></div>-->
+<!--</div>-->
+<!--<div class="col-md-12">-->
+<!--<div class="col-md-10 col-md-offset-1" style="background-color: #000066;height:100px"></div>-->
+<!--</div>-->
+
+<!--</div>-->
+<!--</div>-->
+
+
+<div class="navbar navbar-inverse navbar-fixed-top">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+    </div>
+    <div class="navbar-collapse collapse">
+      <ul class="nav navbar-nav" ng-mouseleave="hover_accueil()">
+        <li ng-mouseenter="hover_accueil()"><a ui-sref="accueil">Accueil</a></li>
+        <li ng-mouseenter="hover_team()"><a ui-sref="teambuilding">Team Building</a></li>
+
+        <li class="dropdown menu-large" ng-mouseenter="hover_partner()">
+          <a ui-sref="groupes" class="dropdown-toggle"  data-toggle="dropdown"> Mes partenaires<b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu megamenu row" ng-show="partner_hover">
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Partenaire 1</li>
+                <li><a href="#">Image Partenaire 1</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Partenaire 2</li>
+                <li><a href="#">Image Partenaire 2</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Partenaire 3</li>
+                <li><a href="#">Image Partenaire 3</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Partenaire 4</li>
+                <li><a href="#">Image Partenaire 4</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
             </li>
           </ul>
-          <div class="weather">{{hour}} --- {{temp}}° {{weather}}<i class="icon" ng-class="icon"></i>{{message}}
-          <!--<div class="weather">{{date}} --- {{hour}} --- {{temp}}° {{weather}}<i class="icon" ng-class="icon"></i>{{message}}-->
-          </div>
-        </div>
-        <!-- /.navbar-collapse -->
-      </div>
-      <!-- /.container-fluid -->
+        </li>
 
-      <div ng-show="errorPage" class="col-md-12 errorDiv" >
-        <div class="row">
-          <div class="col-md-6 errorDivLeft" >DESOLE<br>ERREUR 404</div>
-          <div class="col-md-6 errorDivRight"><img src="images/chien404.gif"></div>
-        </div>
-      </div>
+        <li class="dropdown menu-large" ng-mouseover="hover_event()">
+          <a ui-sref="evenementiel" class="dropdown-toggle"  data-toggle="dropdown"> Evenementiel <b class="caret"></b>
+          </a>
+          <ul class="dropdown-menu megamenu row" ng-show="event_hover">
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Groupe 1</li>
+                <li><a href="#">Image groupe 1</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Groupe 2</li>
+                <li><a href="#">Image groupe 2</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Groupe 3</li>
+                <li><a href="#">Image groupe 3</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Groupe 4</li>
+                <li><a href="#">Image groupe 4</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
 
-    </nav>
+        <li class="dropdown menu-large" ng-mouseenter="hover_pedagogie()">
+          <a ui-sref="pedagogie" class="dropdown-toggle" data-toggle="dropdown"> Pédagogie <b class="caret"></b> </a>
+          <ul class="dropdown-menu megamenu row" ng-show="pedagogie_hover">
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Cours 1</li>
+                <li><a href="#">Image Cours 1</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Cours 2</li>
+                <li><a href="#">Image Cours 2</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Cours 3</li>
+                <li><a href="#">Image Cours 3</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Cours 4</li>
+                <li><a href="#">Image Cours 4</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
 
+        <li class="dropdown menu-large" ng-mouseenter="hover_medias()">
+          <a ui-sref="medias" class="dropdown-toggle" data-toggle="dropdown"> Medias <b class="caret"></b> </a>
+          <ul class="dropdown-menu megamenu row" ng-show="medias_hover">
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Photos</li>
+                <li><a href="#">Image media 1</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Vidéos</li>
+                <li><a href="#">Image media 2</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Téléchargement</li>
+                <li><a href="#">Image media 3</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Projets</li>
+                <li><a href="#">Image media 4</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+
+        <li class="dropdown menu-large" ng-mouseenter="hover_contacts()">
+          <a ui-sref="contacts" class="dropdown-toggle" data-toggle="dropdown">Contacts <b class="caret"></b></a>
+          <ul class="dropdown-menu megamenu row" ng-show="contacts_hover">
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">Liens Partenaires</li>
+                <li><a href="#">Image Cours 1</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-3">
+              <ul>
+                <li class="dropdown-header">References</li>
+                <li><a href="#">Image Cours 2</a></li>
+                <li class="divider"></li>
+                <li class="dropdown-header">Liens</li>
+                <li><a href="#">theme 1</a></li>
+                <li><a href="#">theme 2</a></li>
+                <li><a href="#">theme 3</a></li>
+              </ul>
+            </li>
+            <li class="col-sm-6">
+             ICI peut être une carte google map
+            </li>
+          </ul>
+
+        </li>
+      </ul>
+    </div>
   </div>
 </div>

@@ -6,4 +6,5 @@
 angular.module('siteFrancoiseApp')
   .controller('pedagogieCtrl',['$scope', function ($scope) {
     $scope.nothing='';
+    $scope.prehome=false;
   }]);

@@ -6,5 +6,6 @@
 angular.module('siteFrancoiseApp')
   .controller('groupesCtrl',['$scope', function ($scope) {
     $scope.nothing='';
+    $scope.prehome=false;
 
   }]);

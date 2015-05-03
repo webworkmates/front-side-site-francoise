@@ -6,4 +6,5 @@
 angular.module('siteFrancoiseApp')
   .controller('teambuildingCtrl',['$scope', function ($scope) {
     $scope.nothing='';
+    $scope.prehome=false;
   }]);

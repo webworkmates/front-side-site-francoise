@@ -2,7 +2,7 @@
  * Created by yanning on 24/04/2015.
  */
 'use strict';
-angular.module('siteFrancoiseApp').service('menuFactory', ['$http', '$q', 'helper', function ($http, $q, helper) {
+angular.module('siteFrancoiseApp').service('menuFactory', ['$http', '$q', 'helper', 'config', function ($http, $q, helper, config) {
   var menuItems;
   return ({
     getmenuItems: getmenuItems
@@ -16,7 +16,7 @@ angular.module('siteFrancoiseApp').service('menuFactory', ['$http', '$q', 'helpe
     }
     var request = $http({
       method: 'get',
-      url: 'http://localhost:8085/menuItems',
+      url: config.server.url+'/menuItems',
       headers: {'Accept': 'application/json'}
     });
     var result = request.then(helper.handleSuccess, helper.handleError);

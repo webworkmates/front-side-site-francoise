@@ -14,19 +14,15 @@
   <!-- build:css(.tmp) styles/main.css -->
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/styleperso.css">
-  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans" />
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans"/>
   <!-- endbuild -->
 </head>
-<body ng-app="siteFrancoiseApp">
-<div class="container">
-  <div class="row">
-      <div  ui-view="menu"></div>
-      <div ui-view="subheader"></div>
-      <div style="margin-top: 80px" id="content" ui-view="content"></div>
-      <div  id="footer" ng-include="'./views/menu/footer.html'"></div>
-  </div>
-</div>
+<body ng-app="siteFrancoiseApp" ng-class="{'prehome':prehome}">
 
+<div ui-view="menu"></div>
+<div ui-view="subheader"></div>
+<div class="col-md-10" style="margin-top: 80px" id="content" ui-view="content"></div>
+<div ng-show="!prehome" id="footer" ng-include="'./views/menu/footer.html'"></div>
 
 
 <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -83,6 +79,8 @@
 <script src="scripts/error/errorCtrl.js"></script>
 <script src="scripts/pedagogie/pedagogieCtrl.js"></script>
 <script src="scripts/configuration.js"></script>
+<script src="scripts/menu/menujs.js"></script>
+<script src="scripts/prehome/prehomeCtrl.js"></script>
 <script type="text/javascript" src="http://www.google.com/jsapi?key=API_KEY_GOES_HERE"></script>
 <!-- endbuild -->
 </body>
