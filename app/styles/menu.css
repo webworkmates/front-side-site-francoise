@@ -1,0 +1,13 @@
+.mynav{
+  background-color: white;
+  height:70px;
+  padding-top: 20px
+}
+
+.mynav a{
+  color:#000000 !important;
+}
+
+.mynav a:hover,a:focus,a:active{
+  color:deeppink !important;
+}

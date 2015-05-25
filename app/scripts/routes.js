@@ -9,7 +9,7 @@ angular
     $urlRouterProvider.otherwise('prehome');
     $stateProvider
       .state('accueil', {
-        url: '/home',
+        url: '/accueil',
         views: {
           'menu@': {
             templateUrl: 'views/menu/menu.html',
